@@ -1,0 +1,51 @@
+textbox - "welcome to our tech store"
+textbox - "Choose what to buy"
+
+checkbox - "Samsung tv - 1099$" 
+checkbox - "Apple macbook - 2500$"
+checkbox - "Apple airtag - 120$"
+checkbox - "Playstation - 599$"
+checkbox - "Samsung S20 - 630$"  
+
+if checkbox is checked add price to total
+
+ask if that will be all 
+
+if yes{
+display total
+}
+
+
+else {
+go back
+} 
+
+
+treeview 1 - tv
+treeview 2 - phones
+treeview 3 - laptops
+treeview 4 - gadgets 
+  
+
+ <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Welcome to our tech store" Margin="263,10,0,28" FontSize="30.0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Choose what to buy" Margin="298,50,0,10" FontSize="30.0"/>
+        <CheckBox  x:Name = "check1" HorizontalAlignment="Left" Content="Samsung tv - 1099$" Margin="330,108,0,0" VerticalAlignment="Top" FontSize="25.0" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+
+        <CheckBox  x:Name = "check2" HorizontalAlignment="Left" Content="Apple macbook - 2500$" Margin="330,145,0,0" VerticalAlignment="Top" FontSize="25.0" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+
+        <CheckBox  x:Name = "check3" HorizontalAlignment="Left" Content="Apple airtag - 120$" Margin="330,182,0,0" VerticalAlignment="Top" FontSize="25.0" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+
+        <CheckBox  x:Name = "check4" HorizontalAlignment="Left" Content="Playstation - 599$" Margin="330,219,0,0" VerticalAlignment="Top" FontSize="25.0" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+
+        <CheckBox  x:Name = "check5" HorizontalAlignment="Left" Content="Samsung S20 - 630$" Margin="330,256,0,0" VerticalAlignment="Top" FontSize="25.0" Height="37" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Total" Margin="0,298,0,86" FontSize="30.0" Width="232"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Margin="0,360,0,28" FontSize="30.0" Width="233">
+            <TextBlock.Text>
+                <Binding Path="Total">
+                    <Binding.StringFormat>
+                        {0:C}
+                    </Binding.StringFormat>
+                </Binding>
+            </TextBlock.Text>
+        </TextBlock> 
