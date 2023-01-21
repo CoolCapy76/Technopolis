@@ -18,7 +18,7 @@
 
         <CheckBox  x:Name = "check2" HorizontalAlignment="Left" Content="Apple macbook - 2500$" Margin="330,145,0,0" VerticalAlignment="Top" FontSize="25.0" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
 
-        <CheckBox  x:Name = "check3" HorizontalAlignment="Left" Content="Apple airtag - 120$" Margin="330,182,0,0" VerticalAlignment="Top" FontSize="25.0" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+        <CheckBox  x:Name = "check3" HorizontalAlignment="Left" Content="Apple airtag - 150$" Margin="330,182,0,0" VerticalAlignment="Top" FontSize="25.0" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
 
         <CheckBox  x:Name = "check4" HorizontalAlignment="Left" Content="Playstation - 599$" Margin="330,219,0,0" VerticalAlignment="Top" FontSize="25.0" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
 
