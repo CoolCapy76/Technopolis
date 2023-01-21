@@ -20,72 +20,77 @@ namespace TechStore
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
-        double total;
+        private double _total;
+        public double Total
+        {
+            get => _total;
+            set
+            {
+                _total = value;
+                OnPropertyChanged();
+            }
+        }
 
         public MainWindow()
         {
             InitializeComponent();
-            //DataContext = new MyViewModel();
+            DataContext = this;
         }
 
-        /*class MyViewModel : INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            private double _value;
-            public double Value
-            {
-                get => _value;
-                set
-                {
-                    _value = value;
-                    OnPropertyChanged();
-                }
-            }
-
-            public event PropertyChangedEventHandler PropertyChanged;
-
-            protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }*/
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            if (check1.IsChecked == true)
+            CheckBox checkBox = (CheckBox)sender;
+            switch (checkBox.Name)
             {
-                total = total + 1099;
+                case "check1":
+                    Total += 1099;
+                    break;
+                case "check2":
+                    Total += 2500;
+                    break;
+                case "check3":
+                    Total += 150;
+                    break;
+                case "check4":
+                    Total += 599;
+                    break;
+                case "check5":
+                    Total += 630;
+                    break;
             }
-
-            if (check2.IsChecked == true)
-            {
-                total = total + 2500;
-            }
-
-            if (check3.IsChecked == true)
-            {
-                total = total + 150;
-            }
-
-            if (check4.IsChecked == true)
-            {
-                total = total + 599;
-            }
-
-            if (check5.IsChecked == true)
-            {
-                total = total + 630;
-            }
-
         }
 
-        
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            CheckBox checkBox = (CheckBox)sender;
+            switch (checkBox.Name)
+            {
+                case "check1":
+                    Total -= 1099;
+                    break;
+                case "check2":
+                    Total -= 2500;
+                    break;
+                case "check3":
+                    Total -= 150;
+                    break;
+                case "check4":
+                    Total -= 599;
+                    break;
+                case "check5":
+                    Total -= 630;
+                    break;
+            }
+        }
 
     }
 }
